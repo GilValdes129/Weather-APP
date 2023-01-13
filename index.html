@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+    <script src="https://kit.fontawesome.com/f43a9b3e93.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="card">
+        <div class="search">
+            <input type="text" class="search-bar" placeholder="Search...">
+            <button id="Search-btn"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+        </div>
+    </div>
+    <div class="search-history">
+        <button class="btn">City</button>
+    </div>
+    <div class="weather">
+        <h2 class="City-Name">City</h2>
+        <h3 id="Date1">DATE</h3>
+        <h3 id="Weather1">Weather</h3>
+        <h3 id="Temp1">Temp</h3>
+        <h3 id="Wind1">Wind</h3>
+        <h3 id="Humidity1">Humidity</h3>
+    </div>
+    <div class="forecast">
+        <h2>Five day Forecast</h2>
+        <div class="day-container">
+            <h2 id="Date2">DATE</h2>
+            <h3 id="Weather2">Weather</h3>
+            <h3 id="Temp2">Temp</h3>
+            <h3 id="Wind2">Wind</h3>
+            <h3 id="Humidity2">Humidity</h3>
+        </div>
+        <div class="day-container">
+            <h2 id="Date3">DATE</h2>
+            <h3 id="Weather3">Weather</h3>
+            <h3 id="Temp3">Temp</h3>
+            <h3 id="Wind3">Wind</h3>
+            <h3 id="Humidity3">Humidity</h3>
+        </div>
+        <div class="day-container">
+            <h2 id="Date4">DATE</h2>
+            <h3 id="Weather4">Weather</h3>
+            <h3 id="Temp4">Temp</h3>
+            <h3 id="Wind4">Wind</h3>
+            <h3 id="Humidity4">Humidity</h3>
+        </div>
+        <div class="day-container">
+            <h2 id="Date5">DATE</h2>
+            <h3 id="Weather5">Weather</h3>
+            <h3 id="Temp5">Temp</h3>
+            <h3 id="Wind5">Wind</h3>
+            <h3 id="Humidity5">Humidity</h3>
+        </div>
+        <div class="day-container">
+            <h2 id="Date6">DATE</h2>
+            <h3 id="Weather6">Weather</h3>
+            <h3 id="Temp6">Temp</h3>
+            <h3 id="Wind6">Wind</h3>
+            <h3 id="Humidity6">Humidity</h3>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
