@@ -82,7 +82,7 @@ body .card .weather {
   justify-content: center;
   align-items: center;
 }
-body .card .weather div {
+body .card .weather .weather-container {
   display: grid;
   grid-template-columns: auto auto;
   padding: 10px;
@@ -91,14 +91,31 @@ body .card .weather div {
   background-color: white;
   height: 20vh;
 }
-body .card .weather div #Temp1 {
+body .card .weather .weather-container div {
+  grid-row-start: 3;
+  grid-row-end: 5;
   grid-column-start: 1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-body .card .weather div #Wind1 {
-  grid-column-start: 1;
+body .card .weather .weather-container div img {
+  height: 80px;
 }
-body .card .weather div #Humidity1 {
-  grid-column-start: 1;
+body .card .weather .weather-container #Temp1 {
+  grid-column-start: 2;
+}
+body .card .weather .weather-container #Wind1 {
+  grid-column-start: 2;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .card .weather .weather-container #Humidity1 {
+  grid-column-start: 2;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 body .card .forecast {
   grid-column-start: 2;
