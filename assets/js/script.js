@@ -43,15 +43,25 @@ var forecastinfo = []
 var searchHistory = JSON.parse(localStorage.getItem("Search")) || []
 
 
-searchBtn.addEventListener("click", getWeather)
-function getWeather(){
-    
-    var city = searchBar.value
-    searchHistory.unshift(city)
-    localStorage.setItem("Search", JSON.stringify(searchHistory))
-    var units = "metric"
-    var currentcity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=33914f843cb7f4d9a146b4cb8ba2a07b&units=${units}`
-    var forecastcity = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=33914f843cb7f4d9a146b4cb8ba2a07b&units=${units}`
+searchBtn.addEventListener("click", getCityName)
+btnContainer.addEventListener("click", function(event){
+  container = event.target
+  children = container.dataset.city
+  console.log(children)
+  getWeather(children)
+})
+
+function getCityName(){
+  var city = searchBar.value 
+  localStorage.setItem("city", city)
+  searchHistory.unshift(city)
+  localStorage.setItem("Search", JSON.stringify(searchHistory))
+  getWeather(city)
+}
+function getWeather(city){
+  var units = "metric"
+  var currentcity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=33914f843cb7f4d9a146b4cb8ba2a07b&units=${units}`
+  var forecastcity = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=33914f843cb7f4d9a146b4cb8ba2a07b&units=${units}`
       fetch(currentcity)
       .then(function(response){
         return response.json();
@@ -170,11 +180,9 @@ function DisplaySearch(){
   btnContainer.innerHTML = ""
   for(var i=0; i < localSearches.length; i++){
     var button = document.createElement("button")
-    var link = document.createElement("a")
-    link.href = "hola"
     button.textContent = localSearches[i]
+    button.dataset.city = localSearches[i]
     button.classList.add("btn")
-    button.appendChild(link)
     btnContainer.appendChild(button)
   }
   
